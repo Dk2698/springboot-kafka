@@ -1,0 +1,15 @@
+download kafka
+start zookeeper server and kafka server
+bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+bin\windows\kafka-server-start.bat config\server.properties
+
+create new topic
+bin\windows\kafka-topics.bat --create --topic user-topic --bootstrap-server localhost:9092
+
+kafka-topics.bat --help
+
+produce new topic
+bin\windows\kafka-console-producer.bat --topic user-topic --bootstrap-server localhost:9092
+
+consuming message
+bin\windows\kafka-console-consumer --topic user-topic --from-beginning --bootstrap-server localhost:9092
